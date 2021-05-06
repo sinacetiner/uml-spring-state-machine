@@ -28,7 +28,7 @@ public class StateMachineTwoConfig extends StateMachineConfigurerAdapter<String,
     public void configure(StateMachineModelConfigurer<String, String> model) throws Exception {
         model.withModel().factory(modelFactory2());
     }
-    
+
     @Bean
     public StateMachineModelFactory<String, String> modelFactory2() {
         return new UmlStateMachineModelFactory("classpath:papyrus/StateMachine2.uml");
@@ -39,7 +39,11 @@ public class StateMachineTwoConfig extends StateMachineConfigurerAdapter<String,
         return new StateMachineListenerAdapter<String, String>() {
             @Override
             public void stateChanged(State<String, String> from, State<String, String> to) {
-                log.info("State 2 changed to " + to.getId());
+                if (from != null && to != null) {
+                    log.info("State from : " + from.getId() + " -> to " + to.getId());
+                } else {
+                    log.info("State from : " + from + " -> to " + to);
+                }
             }
         };
 

@@ -15,26 +15,26 @@ import org.springframework.statemachine.uml.UmlStateMachineModelFactory;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@Configuration
-@EnableStateMachine(name="stateMachineOne")
-public class StateMachineOneConfig extends StateMachineConfigurerAdapter<String, String> {
+//@Configuration
+//@EnableStateMachine(name="stateMachineOne")
+public class StateMachineOneConfig { //extends StateMachineConfigurerAdapter<String, String> {
     
-    @Override
+//    @Override
     public void configure(StateMachineConfigurationConfigurer<String, String> config) throws Exception {
-        config.withConfiguration().autoStartup(false).listener(listener1()).machineId("machineone");
+//        config.withConfiguration().autoStartup(false).listener(listener1()).machineId("machineone");
     }
 
-    @Override
+//    @Override
     public void configure(StateMachineModelConfigurer<String, String> model) throws Exception {
-        model.withModel().factory(modelFactory1());
+//        model.withModel().factory(modelFactory1());
     }
 
-    @Bean
+//    @Bean
     public StateMachineModelFactory<String, String> modelFactory1() {
         return new UmlStateMachineModelFactory("classpath:papyrus/StateMachine1.uml");
     }
     
-    @Bean
+//    @Bean
     public StateMachineListener<String, String> listener1() {
         return new StateMachineListenerAdapter<String, String>() {
             @Override
