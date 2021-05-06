@@ -2,11 +2,13 @@ package de.joergi.umlspringstatemachine;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.statemachine.StateContext;
 import org.springframework.statemachine.config.EnableStateMachine;
 import org.springframework.statemachine.config.StateMachineConfigurerAdapter;
 import org.springframework.statemachine.config.builders.StateMachineConfigurationConfigurer;
 import org.springframework.statemachine.config.builders.StateMachineModelConfigurer;
 import org.springframework.statemachine.config.model.StateMachineModelFactory;
+import org.springframework.statemachine.guard.Guard;
 import org.springframework.statemachine.listener.StateMachineListener;
 import org.springframework.statemachine.listener.StateMachineListenerAdapter;
 import org.springframework.statemachine.state.State;
@@ -47,6 +49,12 @@ public class StateMachineTwoConfig extends StateMachineConfigurerAdapter<String,
             }
         };
 
+    }
+
+    @Bean
+    public Guard<String, String> myguard1() {
+
+        return stateContext -> true;
     }
 
 }

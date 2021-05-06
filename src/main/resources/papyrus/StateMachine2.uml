@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_-MEy4KN9EeeHApfNCf-4Pw" name="StateMachine2">
   <packagedElement xmi:type="uml:StateMachine" xmi:id="_BI7lkKN-EeeHApfNCf-4Pw" name="StateMachine2">
+    <ownedBehavior xmi:type="uml:FunctionBehavior" xmi:id="_Hmt6cK58EeuEWY2ZFBi8lQ" isActive="true" body="">
+      <language>bean</language>
+    </ownedBehavior>
     <region xmi:type="uml:Region" xmi:id="_CLeAoKN-EeeHApfNCf-4Pw" name="Region2">
       <transition xmi:type="uml:Transition" xmi:id="_X3K4EKN-EeeHApfNCf-4Pw" source="_JoDuAKN-EeeHApfNCf-4Pw" target="_KMdbkKN-EeeHApfNCf-4Pw"/>
       <transition xmi:type="uml:Transition" xmi:id="_fbcIMK2dEeuEWY2ZFBi8lQ" source="_KMdbkKN-EeeHApfNCf-4Pw" target="_L2XYoKN-EeeHApfNCf-4Pw">
-        <effect xmi:type="uml:FunctionBehavior" xmi:id="_MaxD4K2uEeuEWY2ZFBi8lQ" name="conn_try" isActive="true">
-          <language>JAVA</language>
-          <body>conn_try</body>
+        <effect xmi:type="uml:FunctionBehavior" xmi:id="_rcV0kK5pEeuEWY2ZFBi8lQ" name="SI2M_func" body="">
+          <language>bean</language>
         </effect>
         <trigger xmi:type="uml:Trigger" xmi:id="_lhrtsK2dEeuEWY2ZFBi8lQ" name="Trigger" event="_WsnzYK2cEeuEWY2ZFBi8lQ"/>
       </transition>
@@ -24,6 +26,10 @@
       </transition>
       <transition xmi:type="uml:Transition" xmi:id="_zPDIsK21EeuEWY2ZFBi8lQ" source="_L2XYoKN-EeeHApfNCf-4Pw" target="_MQDrAKN-EeeHApfNCf-4Pw">
         <trigger xmi:type="uml:Trigger" xmi:id="_Aeio0K22EeuEWY2ZFBi8lQ" event="_b_6DMK2iEeuEWY2ZFBi8lQ"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_yWZCUK55EeuEWY2ZFBi8lQ" source="_L2XYoKN-EeeHApfNCf-4Pw" target="_vnE8YK55EeuEWY2ZFBi8lQ"/>
+      <transition xmi:type="uml:Transition" xmi:id="_0OR7kK56EeuEWY2ZFBi8lQ" name="myguard1" guard="_Hm2dUK58EeuEWY2ZFBi8lQ" source="_vnE8YK55EeuEWY2ZFBi8lQ" target="_KMdbkKN-EeeHApfNCf-4Pw">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="_Hm2dUK58EeuEWY2ZFBi8lQ"/>
       </transition>
       <subvertex xmi:type="uml:Pseudostate" xmi:id="_JoDuAKN-EeeHApfNCf-4Pw" name="sm2_Initial"/>
       <subvertex xmi:type="uml:State" xmi:id="_KMdbkKN-EeeHApfNCf-4Pw" name="sm2_init-state">
@@ -44,6 +50,7 @@
       </subvertex>
       <subvertex xmi:type="uml:State" xmi:id="_MQDrAKN-EeeHApfNCf-4Pw" name="sm2_end_state"/>
       <subvertex xmi:type="uml:FinalState" xmi:id="_PCsKsKN-EeeHApfNCf-4Pw" name="sm2_FinalState2"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_vnE8YK55EeuEWY2ZFBi8lQ" name="Choice13" kind="choice"/>
     </region>
   </packagedElement>
   <packagedElement xmi:type="uml:Signal" xmi:id="_Jy8LMK2cEeuEWY2ZFBi8lQ" name="SI2M"/>
